@@ -33,9 +33,7 @@ th, td { padding: 0.5rem 0.75rem; border: 1px solid #d1d9e0; text-align: left; }
 </table>
 
 <h2>Why this exists</h2>
-<p>PyPI's "too many new projects created" cap fired when these three packages were submitted in quick succession and has stayed sticky for &gt;24 hours, with admin review pending. This index lets users install the packages from their authoritative GitHub Release artifacts via standard <code>pip</code> tooling without waiting on PyPI.</p>
-
-<p>When PyPI publishes complete, this index will continue working but installing from PyPI will be the canonical path.</p>
+<p>PyPI's "too many new projects created" cap fired when these three packages were submitted in quick succession. Two of three (<code>bedrock-ops</code> and <code>embspec</code>) have since published to PyPI and are now installable via plain <code>pip install</code>. This index continues to host installable links for <code>agent-budget</code> while it waits on the admin to lift the remaining cap, and will keep the GitHub-Release-pinned wheels as a permanent fallback for anyone wanting hash-pinned installs.</p>
 
 <h2>Source</h2>
 <p><a href="https://github.com/MukundaKatta/python-package-index">github.com/MukundaKatta/python-package-index</a></p>
