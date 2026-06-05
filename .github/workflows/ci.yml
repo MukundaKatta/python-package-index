@@ -1,0 +1,29 @@
+name: CI
+
+# Validate the static HTML that makes up this PEP 503 package index.
+# This is additive and non-breaking: it only reads the existing files.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  html-validate:
+    name: Validate HTML
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Validate HTML files
+        run: |
+          npx --yes html-validate@8 \
+            --config .github/html-validate.json \
+            "**/*.html"
